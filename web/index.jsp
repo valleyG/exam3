@@ -6,9 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  //获取绝对路径路径
+  String path = request.getContextPath();
+
+  String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+          + path + "/";
+%>
 <html>
   <head>
     <title>首页</title>
+    <base href="<%=basePath%>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/bootstrap.css">

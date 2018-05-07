@@ -5,21 +5,29 @@
   Time: 16:59
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    //获取绝对路径路径
+    String path = request.getContextPath();
+
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>添加学生信息</title>
+    <base href="<%=basePath%>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <script type="application/javascript" src="/js/jquery-1.9.0.min.js"></script>
-    <script type="application/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="application/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="application/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
     <div style="margin-top: 80px;">
-        <form action="/student/addStudent" method="post" class="form-horizontal">
+        <form action="student/addStudent" method="post" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-5 ">
                     <label for="sName" class="col-xs-4 control-label">学生姓名：</label>

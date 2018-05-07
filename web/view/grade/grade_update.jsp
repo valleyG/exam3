@@ -8,18 +8,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    //获取绝对路径路径
+    String path = request.getContextPath();
+
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <html>
 <head>
     <title>添加学生信息</title>
+    <base href="<%=basePath%>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <script type="application/javascript" src="/js/jquery-1.9.0.min.js"></script>
-    <script type="application/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="application/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="application/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
             <div style="margin-top: 80px;">
-                <form action="/grade/updateGrade" method="post" class="form-horizontal">
+                <form action="grade/updateGrade" method="post" class="form-horizontal">
                     <input type="hidden" name="cId" value="${grade.cId}">
                     <div class="form-group">
                         <div class="col-xs-5">

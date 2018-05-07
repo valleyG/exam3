@@ -30,7 +30,7 @@ public class GradeDaoImpl implements IGradeDao {
         return c3p0utils.update(sql, grade.getcName());
     }
 
-//
+
     @Override
     public int updateGrade(Grade grade) {
         String sql = "update t_class set cName = ? where cId = ?";
